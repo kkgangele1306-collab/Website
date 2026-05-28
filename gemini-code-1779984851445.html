@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Krishnakant Gangele | Head of Biotechnology, MCBU</title>
+    <style>
+        :root {
+            --primary-color: #0d47a1; /* Deep Academic Blue */
+            --secondary-color: #1565c0;
+            --accent-color: #ffb300;   /* Muted Gold Accent */
+            --text-dark: #212121;
+            --text-light: #616161;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.7;
+        }
+
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        /* Hero Profile Banner */
+        .hero {
+            background: linear-gradient(135deg, #0a2540 0%, #104c82 100%);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+            border-bottom: 5px solid var(--accent-color);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .hero h2 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #e3f2fd;
+            margin-bottom: 8px;
+        }
+
+        .hero h3 {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #bbdefb;
+            margin-bottom: 20px;
+        }
+
+        /* Global Section Setup */
+        section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        section:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 35px;
+            position: relative;
+            font-weight: 600;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 60px;
+            height: 3.5px;
+            background-color: var(--accent-color);
+        }
+
+        /* Layout Grid Cards */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .profile-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .profile-card h4 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        ul.styled-list {
+            list-style: none;
+        }
+
+        ul.styled-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        ul.styled-list li::before {
+            content: "•";
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.3rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        /* Highlight box for Innovation & Administration */
+        .highlight-box {
+            background: #fff8e1;
+            border-left: 4px solid var(--accent-color);
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box h4 {
+            color: #b78103;
+            margin-bottom: 5px;
+            font-size: 1.15rem;
+        }
+
+        /* Publications block styling */
+        .pub-row {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .pub-row:last-child {
+            border-bottom: none;
+        }
+
+        .pub-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .pub-authors {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .pub-journal {
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--secondary-color);
+        }
+
+        /* Contact Matrix */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            margin-top: 15px;
+        }
+
+        .info-table td {
+            padding: 14px 18px;
+            border: 1px solid var(--border-color);
+            font-size: 1rem;
+        }
+
+        .info-table tr td:first-child {
+            font-weight: 600;
+            color: var(--primary-color);
+            background-color: #f1f3f5;
+            width: 25%;
+        }
+
+        footer {
+            background-color: #0a2540;
+            color: var(--white);
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.95rem;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        /* Responsive Fixes */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-links li {
+                margin: 0 10px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .info-table td {
+                display: block;
+                width: 100% !important;
+            }
+            .info-table tr td:first-child {
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Navigation Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-text">Dr. KK Gangele</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#administration">Administration</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#teaching">Teaching</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Top Banner Summary -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Dr. Krishnakant Gangele</h1>
+            <h2>Head, Department of Biotechnology</h2>
+            <h2>Assistant Professor, School of Studies in Zoology</h2>
+            <h3>Maharaja Chhatrasal Bundelkhand University (MCBU), Chhatarpur, M.P.</h3>
+        </div>
+    </section>
+
+    <!-- Executive Summary / Biography -->
+    <section id="about">
+        <div class="container">
+            <h3 class="section-title">🧬 About Me</h3>
+            <p>I am an academician, researcher, and institutional administrator dedicated to advancing the biological sciences and fostering regional entrepreneurial ecosystems. I serve a dual role at <strong>Maharaja Chhatrasal Bundelkhand University (MCBU), Chhatarpur</strong>, heading the <strong>Department of Biotechnology</strong> while concurrently teaching within the <strong>School of Studies in Zoology</strong>.</p>
+            <br>
+            <p>My foundational expert execution in protein biochemistry, molecular genetics, and biophysics was developed during my intensive doctoral training at the premier <strong>Department of Biotechnology, Indian Institute of Technology (IIT) Roorkee</strong>. My academic vision combines strict scientific evaluation in structural biology with the creation of modern incubation facilities to build bridges between educational findings and regional startup development.</p>
+        </div>
+    </section>
+
+    <!-- Institutional Governance & Leadership -->
+    <section id="administration">
+        <div class="container">
+            <h3 class="section-title">🏢 Administrative & Innovation Leadership</h3>
+            
+            <div class="highlight-box">
+                <h4>Chhatrasal Incubation and Innovation Foundation (CIIF)</h4>
+                <p>Serving as a core organizational driver establishing CIIF as a premier registered Section 8 company at MCBU. Actively structuring frameworks under the World Bank-supported RAMP Scheme and pioneering institutional MoUs with bodies like the Madhya Pradesh Laghu Udyog Nigam (MPLUN) to catalyze MSME innovations and micro-entrepreneurship.</p>
+            </div>
+
+            <div class="grid-layout">
+                <div class="profile-card">
+                    <h4>Departmental Leadership</h4>
+                    <p>Overseeing comprehensive curriculum modernization, laboratory expansion, and admissions operations for the Department of Biotechnology. Orchestrated progressive, interdisciplinary updates to the M.Sc. Biotechnology policy to encourage enrollment from diverse branch science streams.</p>
+                </div>
+                <div class="profile-card">
+                    <h4>Curriculum & Statutory Boards</h4>
+                    <p>Actively engaged in higher education structural workflows across Madhya Pradesh, including mapping multi-disciplinary Swayam digital courses to state unified syllabi, coordinating central examinations, and refining modern semester system evaluations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Research Domains -->
+    <section id="research">
+        <div class="container">
+            <h3 class="section-title">🔬 Research Competencies</h3>
+            <p>My laboratory integrates experimental biophysics with molecular paradigms to dissect complex protein behavior under physiological and stress environments:</p>
+            
+            <div class="grid-layout">
+                <div class="profile-card">
+                    <h4>Biophysics & Protein Stability</h4>
+                    <p>Analyzing structural dynamics, folding kinetics, and conformational changes of chemokine orthologs and bacterial structural elements across varying pH gradients using sophisticated spectroscopy.</p>
+                </div>
+                <div class="profile-card">
+                    <h4>Advanced Nanobiotechnology</h4>
+                    <p>Synthesizing hollow silica nanospheres assisted by catanionic vesicle frameworks for targeted, sustained smart cargo and chemo-drug delivery profiles.</p>
+                </div>
+                <div class="profile-card">
+                    <h4>Genetics & Molecular Zoology</h4>
+                    <p>Investigating evolutionary origins of essential inflammatory motifs, molecular mechanisms of recombinant expressions, and genomic alterations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Deliverables -->
+    <section id="teaching">
+        <div class="container">
+            <h3 class="section-title">📚 Teaching & Academic Initiatives</h3>
+            <p>Committed to providing experiential field training alongside rigorous theoretical instruction aligned with the National Education Policy framework:</p>
+            <br>
+            <ul class="styled-list">
+                <li><strong>Postgraduate Portfolios (M.Sc.):</strong> Instructing specialized modules in Molecular Biology, Biophysics, Genetic Engineering, and Analytical Techniques for Biotechnology and Zoology scholars.</li>
+                <li><strong>Undergraduate Portfolios (B.Sc.):</strong> Delivery of fundamental concepts in Zoology, Cell Biology, and Applied Vocational Biotechnology.</li>
+                <li><strong>Experiential Field Leadership:</strong> Spearheading structured student exposure initiatives, including conservation workshops at the Panna Tiger Reserve and technological interface tours at the central instrumentation research facilities of IISER Bhopal.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Indexed Publications Tracking -->
+    <section id="publications">
+        <div class="container">
+            <h3 class="section-title">📄 Selected Peer-Reviewed Publications</h3>
+            <p>A partial selection of research output generated in collaboration with leading labs across global indices:</p>
+            
+            <div class="pub-row">
+                <div class="pub-title">Unraveling the evolutionary origin of ELR motif using fish CXC chemokine CXCL8</div>
+                <div class="pub-journal">Fish & Shellfish Immunology</div>
+            </div>
+
+            <div class="pub-row">
+                <div class="pub-title">Molecular insights into the differential structure-dynamics-stability features of interleukin-8 orthologs</div>
+                <div class="pub-journal">International Journal of Biological Macromolecules</div>
+            </div>
+
+            <div class="pub-row">
+                <div class="pub-title">Drug induced catanionic vesicles assisted fabrication of hollow silica nano-spheres as the new age chemo-drug carrier</div>
+                <div class="pub-journal">Colloid and Interface Science Communications</div>
+            </div>
+
+            <div class="pub-row">
+                <div class="pub-title">Molecular Insights into Conformational Heterogeneity and Enhanced Structural Integrity of H. pylori DNA Binding Protein at Low pH</div>
+                <div class="pub-journal">Biochemistry</div>
+            </div>
+
+            <p style="margin-top: 40px; background: #e3f2fd; padding: 15px; border-radius: 6px;">
+                💡 <strong>Track Citation Metrics:</strong> Comprehensive publication matrices, h-index profiles, and open-access preprints are updated live on my 
+                <a href="#" target="_blank" style="text-decoration: underline;">Google Scholar Profile</a> and 
+                <a href="#" target="_blank" style="text-decoration: underline;">ResearchGate Database</a>.
+            </p>
+        </div>
+    </section>
+
+    <!-- Institutional Communication Coordinates -->
+    <section id="contact">
+        <div class="container">
+            <h3 class="section-title">📬 Contact & Academic Office</h3>
+            <p>For communication regarding institutional innovation, biotechnology admissions, or collaborative research publications:</p>
+            
+            <table class="info-table">
+                <tr>
+                    <td>Official Email</td>
+                    <td><a href="mailto:kkgangele@mcbu.ac.in">kkgangele@mcbu.ac.in</a></td>
+                </tr>
+                <tr>
+                    <td>State Government Email</td>
+                    <td><a href="mailto:drkrishna.kgangele@mp.gov.in">drkrishna.kgangele@mp.gov.in</a></td>
+                </tr>
+                <tr>
+                    <td>Administrative Desk</td>
+                    <td>Office of the Head, Department of Biotechnology</td>
+                </tr>
+                <tr>
+                    <td>Campus Address</td>
+                    <td>Maharaja Chhatrasal Bundelkhand University, Panna Road, Chhatarpur, Madhya Pradesh - 471001</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer Copyright -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Dr. Krishnakant Gangele. All Rights Reserved. | Maharaja Chhatrasal Bundelkhand University</p>
+        </div>
+    </footer>
+
+</body>
+</html>
